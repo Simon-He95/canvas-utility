@@ -8,7 +8,7 @@ const text1 = drawLine({
   ],
   lineCap: 'round',
   lineWidth: 5,
-  radialGradient: (ctx) => {
+  borderRadialGradient: (ctx) => {
     const grd = ctx.createLinearGradient(0, 0, 0, 50)
     grd.addColorStop(0, 'red')
     grd.addColorStop(1, 'blue')
@@ -25,7 +25,39 @@ const text2 = drawLine({
   ],
   lineCap: 'round',
   lineWidth: 1,
-  radialGradient: (ctx) => {
+  borderRadialGradient: (ctx) => {
+    const grd = ctx.createLinearGradient(0, 0, 0, 50)
+    grd.addColorStop(0, 'red')
+    grd.addColorStop(1, 'blue')
+    return grd
+  },
+})
+
+const text3 = drawLine({
+  points: [
+    [0, 0],
+    [100, 100],
+    [200, 0],
+  ],
+  isFill: true,
+  fillColor: 'yellow',
+  lineCap: 'round',
+  lineWidth: 1,
+  isClosed: true,
+  color: 'red',
+})
+
+const text4 = drawLine({
+  points: [
+    [0, 0],
+    [100, 100],
+    [200, 0],
+  ],
+  isFill: true,
+  lineCap: 'round',
+  lineWidth: 1,
+  isClosed: true,
+  fillRadialGradient(ctx) {
     const grd = ctx.createLinearGradient(0, 0, 0, 50)
     grd.addColorStop(0, 'red')
     grd.addColorStop(1, 'blue')
@@ -37,8 +69,8 @@ onMounted(() => {
   const wrapper = document.getElementById('wrapper')!
   wrapper.appendChild(text1)
   wrapper.appendChild(text2)
-  // wrapper.appendChild(text3)
-  // wrapper.appendChild(text4)
+  wrapper.appendChild(text3)
+  wrapper.appendChild(text4)
 })
 </script>
 

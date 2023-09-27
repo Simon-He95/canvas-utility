@@ -21,7 +21,10 @@ export interface DrawLine {
   lineCap?: 'round' | 'butt' | 'square'
   lineJoin?: 'miter' | 'round' | 'bevel'
   color?: string | CanvasGradient
+  isFill?: boolean
+  fillColor?: string | CanvasGradient
   isClosed?: boolean
-  radialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  borderRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  fillRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
   setCustom?: (ctx: CanvasRenderingContext2D) => void
 }
