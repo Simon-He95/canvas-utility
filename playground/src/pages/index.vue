@@ -1,0 +1,11 @@
+<script setup lang="ts">
+
+</script>
+
+<template>
+  <div class="flex gap10">
+    <a href="/text">
+      <h1 text-blue:100 text-3xl>text demo</h1>
+    </a>
+  </div>
+</template>
