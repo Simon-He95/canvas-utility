@@ -28,3 +28,42 @@ export interface DrawLine {
   fillRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
   setCustom?: (ctx: CanvasRenderingContext2D) => void
 }
+
+export interface DrawArc {
+  x: number
+  y: number
+  radius: number
+  startAngle: number
+  endAngle: number
+  counterclockwise?: boolean
+  isFill?: boolean
+  lineWidth?: number
+  fillColor?: string | CanvasGradient
+  borderRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  fillRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  setCustom?: (ctx: CanvasRenderingContext2D) => void
+  canvas?: HTMLCanvasElement
+  ctx?: CanvasRenderingContext2D
+  color?: string | CanvasGradient
+  isClosed?: boolean
+}
+
+export interface DrawArcTo {
+  x0: number
+  y0: number
+  x1: number
+  y1: number
+  x2: number
+  y2: number
+  radius: number
+  isFill?: boolean
+  lineWidth?: number
+  fillColor?: string | CanvasGradient
+  borderRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  fillRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  setCustom?: (ctx: CanvasRenderingContext2D) => void
+  canvas?: HTMLCanvasElement
+  ctx?: CanvasRenderingContext2D
+  color?: string | CanvasGradient
+  isClosed?: boolean
+}
