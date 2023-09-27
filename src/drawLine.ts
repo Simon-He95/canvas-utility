@@ -1,7 +1,7 @@
 import type { DrawLine } from './types'
 
 export function drawLine(options: DrawLine) {
-  const { canvas, ctx, points, lineWidth, lineCap, radialGradient, setCustom } = options
+  const { canvas, ctx, points, lineWidth, lineCap, radialGradient, isClosed, setCustom } = options
   let color = options.color
   const _canvas = canvas || document.createElement('canvas')
   const _ctx = ctx || _canvas.getContext('2d')!
@@ -20,6 +20,9 @@ export function drawLine(options: DrawLine) {
     _ctx.strokeStyle = color
   if (setCustom)
     setCustom(_ctx)
+  if (isClosed)
+    _ctx.closePath()
+
   _ctx.stroke()
   return _canvas
 }
