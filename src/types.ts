@@ -10,4 +10,17 @@ export interface DrawText {
   radialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
   canvas?: HTMLCanvasElement
   ctx?: CanvasRenderingContext2D
+  setCustom?: (ctx: CanvasRenderingContext2D) => void
+}
+
+export interface DrawLine {
+  points: [number, number][]
+  canvas?: HTMLCanvasElement
+  ctx?: CanvasRenderingContext2D
+  lineWidth?: number
+  lineCap?: 'round' | 'butt' | 'square'
+  lineJoin?: 'miter' | 'round' | 'bevel'
+  color?: string | CanvasGradient
+  radialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  setCustom?: (ctx: CanvasRenderingContext2D) => void
 }

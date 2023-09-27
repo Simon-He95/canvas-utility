@@ -1,7 +1,7 @@
 import type { DrawText } from './types'
 
 export function drawText(options: DrawText) {
-  const { isFill, text, textAlign, textBaseline, font = '14', direction, radialGradient, canvas, ctx } = options
+  const { isFill, text, textAlign, textBaseline, font = '14', direction, radialGradient, canvas, ctx, setCustom } = options
   let position = options.position
   let color = options.color
   if (!position || !position.length) {
@@ -25,11 +25,15 @@ export function drawText(options: DrawText) {
   if (isFill) {
     if (color)
       _ctx.fillStyle = color
+    if (setCustom)
+      setCustom(_ctx)
     _ctx.fillText(text, x, y)
   }
   else {
     if (color)
       _ctx.strokeStyle = color
+    if (setCustom)
+      setCustom(_ctx)
     _ctx.strokeText(text, x, y)
   }
   return _canvas

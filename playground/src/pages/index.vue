@@ -3,9 +3,12 @@
 </script>
 
 <template>
-  <div class="flex gap10">
+  <div class="flex gap-10">
     <a href="/text">
       <h1 text-blue:100 text-3xl>text demo</h1>
+    </a>
+    <a href="/line">
+      <h1 text-blue:100 text-3xl>line demo</h1>
     </a>
   </div>
 </template>
