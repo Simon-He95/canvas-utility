@@ -1,7 +1,7 @@
-import type { DrawArc } from './types'
+import type { DrawQuadCurve } from './types'
 
-export function drawArc(options: DrawArc) {
-  const { canvas, ctx, x, y, radius, startAngle, endAngle, reverse, lineWidth, borderRadialGradient, fillRadialGradient, isClosed, isFill, setCustom } = options
+export function drawQuadCurve(options: DrawQuadCurve) {
+  const { canvas, ctx, startX, startY, x1, y1, x2, y2, lineWidth, borderRadialGradient, fillRadialGradient, isClosed, isFill, setCustom } = options
   let color = options.color
   let fillColor = options.fillColor
   const _canvas = canvas || document.createElement('canvas')
@@ -14,7 +14,8 @@ export function drawArc(options: DrawArc) {
     _ctx.lineWidth = lineWidth
 
   _ctx.beginPath()
-  _ctx.arc(x, y, radius, startAngle, endAngle, reverse)
+  _ctx.moveTo(startX, startY)
+  _ctx.quadraticCurveTo(x1, y1, x2, y2)
 
   if (isFill) {
     if (isClosed)

@@ -1,7 +1,7 @@
-import type { DrawArc } from './types'
+import type { DrawRoundRect } from './types'
 
-export function drawArc(options: DrawArc) {
-  const { canvas, ctx, x, y, radius, startAngle, endAngle, reverse, lineWidth, borderRadialGradient, fillRadialGradient, isClosed, isFill, setCustom } = options
+export function drawRoundRect(options: DrawRoundRect) {
+  const { canvas, ctx, x, y, width, height, lineWidth, radii, borderRadialGradient, fillRadialGradient, isFill, setCustom } = options
   let color = options.color
   let fillColor = options.fillColor
   const _canvas = canvas || document.createElement('canvas')
@@ -14,11 +14,9 @@ export function drawArc(options: DrawArc) {
     _ctx.lineWidth = lineWidth
 
   _ctx.beginPath()
-  _ctx.arc(x, y, radius, startAngle, endAngle, reverse)
+  _ctx.roundRect(x, y, width, height, radii)
 
   if (isFill) {
-    if (isClosed)
-      _ctx.closePath()
     if (fillColor)
       _ctx.fillStyle = fillColor
     if (setCustom)
@@ -32,8 +30,6 @@ export function drawArc(options: DrawArc) {
   else {
     if (color)
       _ctx.strokeStyle = color
-    if (isClosed)
-      _ctx.closePath()
     if (setCustom)
       setCustom(_ctx)
     _ctx.stroke()

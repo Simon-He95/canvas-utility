@@ -35,7 +35,7 @@ export interface DrawArc {
   radius: number
   startAngle: number
   endAngle: number
-  counterclockwise?: boolean
+  reverse?: boolean
   isFill?: boolean
   lineWidth?: number
   fillColor?: string | CanvasGradient
@@ -87,4 +87,56 @@ export interface DrawCurve {
   ctx?: CanvasRenderingContext2D
   color?: string | CanvasGradient
   isClosed?: boolean
+}
+
+export interface DrawQuadCurve {
+  startX: number
+  startY: number
+  x1: number
+  y1: number
+  x2: number
+  y2: number
+  isFill?: boolean
+  lineWidth?: number
+  fillColor?: string | CanvasGradient
+  borderRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  fillRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  setCustom?: (ctx: CanvasRenderingContext2D) => void
+  canvas?: HTMLCanvasElement
+  ctx?: CanvasRenderingContext2D
+  color?: string | CanvasGradient
+  isClosed?: boolean
+}
+
+export interface DrawRect {
+  x: number
+  y: number
+  width: number
+  height: number
+  isFill?: boolean
+  lineWidth?: number
+  fillColor?: string | CanvasGradient
+  borderRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  fillRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  setCustom?: (ctx: CanvasRenderingContext2D) => void
+  canvas?: HTMLCanvasElement
+  ctx?: CanvasRenderingContext2D
+  color?: string | CanvasGradient
+}
+
+export interface DrawRoundRect {
+  x: number
+  y: number
+  width: number
+  height: number
+  isFill?: boolean
+  lineWidth?: number
+  radii?: number | DOMPointInit | (number | DOMPointInit)[]
+  fillColor?: string | CanvasGradient
+  borderRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  fillRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  setCustom?: (ctx: CanvasRenderingContext2D) => void
+  canvas?: HTMLCanvasElement
+  ctx?: CanvasRenderingContext2D
+  color?: string | CanvasGradient
 }
