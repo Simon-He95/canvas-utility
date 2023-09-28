@@ -15,5 +15,8 @@
     <a href="/arcTo">
       <h1 text-blue:100 text-3xl>arcTo demo</h1>
     </a>
+    <a href="/curve">
+      <h1 text-blue:100 text-3xl>curve demo</h1>
+    </a>
   </div>
 </template>

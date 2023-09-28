@@ -67,3 +67,24 @@ export interface DrawArcTo {
   color?: string | CanvasGradient
   isClosed?: boolean
 }
+
+export interface DrawCurve {
+  startX: number
+  startY: number
+  x1: number
+  y1: number
+  x2: number
+  y2: number
+  endX: number
+  endY: number
+  isFill?: boolean
+  lineWidth?: number
+  fillColor?: string | CanvasGradient
+  borderRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  fillRadialGradient?: ((ctx: CanvasRenderingContext2D) => CanvasGradient) | CanvasGradient
+  setCustom?: (ctx: CanvasRenderingContext2D) => void
+  canvas?: HTMLCanvasElement
+  ctx?: CanvasRenderingContext2D
+  color?: string | CanvasGradient
+  isClosed?: boolean
+}
