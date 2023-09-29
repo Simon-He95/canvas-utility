@@ -1,20 +1,21 @@
 {
-  "name": "canvas-utils",
+  "name": "canvas-utility",
   "version": "0.0.2",
   "packageManager": "pnpm@7.18.2",
-  "description": "canvas-utils",
+  "description": "canvas-utility",
   "author": "Simon He",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git + git@github.com:Simon-He95/canvas-utils.git"
+    "url": "git + git@github.com:Simon-He95/canvas-utility.git"
   },
   "bugs": {
-    "url": "https://github.com/Simon-He95/canvas-utils/issues"
+    "url": "https://github.com/Simon-He95/canvas-utility/issues"
   },
   "keywords": [
-    "canvas-utils",
-    "vue"
+    "canvas-utility",
+    "utils",
+    "canvas"
   ],
   "exports": {
     ".": {
