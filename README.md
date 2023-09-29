@@ -1,9 +1,9 @@
-## Canvas Utils
+## Canvas Utility
 为了节约canvas的上手成本做了一些简单的封装，以便遇到类似的需求可以减少查找api文档的时间。
 
 ## 安装
 ```
-npm install canvas-utils
+npm install canvas-utility
 ```
 
 ## License
