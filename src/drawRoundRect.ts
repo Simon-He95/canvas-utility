@@ -13,8 +13,8 @@ export function drawRoundRect(options: DrawRoundRect) {
   if (lineWidth)
     _ctx.lineWidth = lineWidth
 
-  _ctx.beginPath()
-  _ctx.roundRect(x, y, width, height, radii)
+  _ctx.beginPath();
+  (_ctx as any).roundRect(x, y, width, height, radii)
 
   if (isFill) {
     if (fillColor)
