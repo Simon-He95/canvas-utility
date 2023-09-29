@@ -1,7 +1,7 @@
 import type { DrawCurve } from './types'
 
 export function drawCurve(options: DrawCurve) {
-  const { canvas, ctx, startX, startY, x1, y1, x2, y2, endX, endY, lineWidth, borderRadialGradient, fillRadialGradient, isClosed, isFill, setCustom } = options
+  const { canvas, ctx, start, end, controlPoints, lineWidth, borderRadialGradient, fillRadialGradient, isClosed, isFill, setCustom } = options
   let color = options.color
   let fillColor = options.fillColor
   const _canvas = canvas || document.createElement('canvas')
@@ -14,8 +14,8 @@ export function drawCurve(options: DrawCurve) {
     _ctx.lineWidth = lineWidth
 
   _ctx.beginPath()
-  _ctx.moveTo(startX, startY)
-  _ctx.bezierCurveTo(x1, y1, x2, y2, endX, endY)
+  _ctx.moveTo(...start)
+  _ctx.bezierCurveTo(...controlPoints[0], ...controlPoints[1], ...end)
 
   if (isFill) {
     if (isClosed)

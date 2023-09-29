@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { drawQuadCurve } from '../../../src'
 const text1 = drawQuadCurve({
-  startX: 50,
-  startY: 20,
-  x1: 230,
-  y1: 30,
-  x2: 150,
-  y2: 80,
+  start: [50, 20],
+  controlPoints: [230, 30],
+  end: [150, 80],
   borderRadialGradient: (ctx) => {
     const grd = ctx.createLinearGradient(0, 0, 0, 50)
     grd.addColorStop(0, 'red')
@@ -16,12 +13,9 @@ const text1 = drawQuadCurve({
 })
 
 const text2 = drawQuadCurve({
-  startX: 50,
-  startY: 20,
-  x1: 230,
-  y1: 30,
-  x2: 150,
-  y2: 80,
+  start: [50, 20],
+  controlPoints: [230, 30],
+  end: [150, 80],
   isFill: true,
   fillRadialGradient: (ctx) => {
     const grd = ctx.createLinearGradient(0, 0, 0, 50)
@@ -32,12 +26,9 @@ const text2 = drawQuadCurve({
 })
 
 const text3 = drawQuadCurve({
-  startX: 50,
-  startY: 20,
-  x1: 230,
-  y1: 30,
-  x2: 150,
-  y2: 80,
+  start: [50, 20],
+  controlPoints: [230, 30],
+  end: [150, 80],
   color: 'red',
 })
 

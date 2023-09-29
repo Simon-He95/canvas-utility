@@ -69,14 +69,12 @@ export interface DrawArcTo {
 }
 
 export interface DrawCurve {
-  startX: number
-  startY: number
-  x1: number
-  y1: number
-  x2: number
-  y2: number
-  endX: number
-  endY: number
+  start: [number, number]
+  end: [number, number]
+  controlPoints: [
+    [number, number],
+    [number, number],
+  ]
   isFill?: boolean
   lineWidth?: number
   fillColor?: string | CanvasGradient
@@ -90,12 +88,11 @@ export interface DrawCurve {
 }
 
 export interface DrawQuadCurve {
-  startX: number
-  startY: number
-  x1: number
-  y1: number
-  x2: number
-  y2: number
+  start: [number, number]
+  end: [number, number]
+  controlPoints: [
+    number, number,
+  ]
   isFill?: boolean
   lineWidth?: number
   fillColor?: string | CanvasGradient

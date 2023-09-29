@@ -1,7 +1,7 @@
 import type { DrawQuadCurve } from './types'
 
 export function drawQuadCurve(options: DrawQuadCurve) {
-  const { canvas, ctx, startX, startY, x1, y1, x2, y2, lineWidth, borderRadialGradient, fillRadialGradient, isClosed, isFill, setCustom } = options
+  const { canvas, ctx, start, end, controlPoints, lineWidth, borderRadialGradient, fillRadialGradient, isClosed, isFill, setCustom } = options
   let color = options.color
   let fillColor = options.fillColor
   const _canvas = canvas || document.createElement('canvas')
@@ -14,8 +14,8 @@ export function drawQuadCurve(options: DrawQuadCurve) {
     _ctx.lineWidth = lineWidth
 
   _ctx.beginPath()
-  _ctx.moveTo(startX, startY)
-  _ctx.quadraticCurveTo(x1, y1, x2, y2)
+  _ctx.moveTo(...start)
+  _ctx.quadraticCurveTo(...controlPoints, ...end)
 
   if (isFill) {
     if (isClosed)

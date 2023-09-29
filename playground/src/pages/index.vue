@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { drawArc, drawLine } from '../../../src'
+import { drawArc, drawCurve, drawLine, drawQuadCurve } from '../../../src'
 import type { DrawArc } from '../../../src'
 const canvas = document.createElement('canvas')
-canvas.width = 1000
+canvas.width = 1500
 canvas.height = 500
 const ctx = canvas.getContext('2d')!
 
@@ -12,7 +12,7 @@ const createU = () => {
       [90, 180],
       [90, 100],
     ],
-    color: 'red',
+    color: 'lightblue',
     canvas,
     ctx,
   })
@@ -21,7 +21,7 @@ const createU = () => {
       [110, 180],
       [110, 100],
     ],
-    color: 'red',
+    color: 'lightblue',
     canvas,
     ctx,
   })
@@ -30,7 +30,7 @@ const createU = () => {
       [140, 180],
       [140, 100],
     ],
-    color: 'red',
+    color: 'lightblue',
     canvas,
     ctx,
   })
@@ -39,7 +39,7 @@ const createU = () => {
       [160, 180],
       [160, 100],
     ],
-    color: 'red',
+    color: 'lightblue',
     canvas,
     ctx,
   })
@@ -49,22 +49,22 @@ const createU = () => {
     radius: 10,
     startAngle: 0,
     endAngle: Math.PI,
-    color: 'red',
+    color: 'lightblue',
     reverse: true,
     canvas,
     ctx,
-  } as DrawArc)
+  })
   drawArc({
     x: 150,
     y: 100,
     radius: 10,
     startAngle: 0,
     endAngle: Math.PI,
-    color: 'red',
+    color: 'lightblue',
     reverse: true,
     canvas,
     ctx,
-  } as DrawArc)
+  })
 
   drawArc({
     x: 125,
@@ -72,10 +72,10 @@ const createU = () => {
     radius: 15,
     startAngle: 0,
     endAngle: -Math.PI,
-    color: 'yellow',
+    color: 'lightblue',
     canvas,
     ctx,
-  } as DrawArc)
+  })
 
   drawArc({
     x: 125,
@@ -83,10 +83,10 @@ const createU = () => {
     radius: 35,
     startAngle: 0,
     endAngle: -Math.PI,
-    color: 'yellow',
+    color: 'lightblue',
     canvas,
     ctx,
-  } as DrawArc)
+  })
 }
 
 const createT = () => {
@@ -95,7 +95,7 @@ const createT = () => {
       [240, 200],
       [240, 110],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -104,7 +104,7 @@ const createT = () => {
       [260, 200],
       [260, 110],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -113,7 +113,7 @@ const createT = () => {
       [210, 110],
       [240, 110],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -122,7 +122,7 @@ const createT = () => {
       [210, 90],
       [290, 90],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -131,7 +131,7 @@ const createT = () => {
       [260, 110],
       [290, 110],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -141,7 +141,7 @@ const createT = () => {
     radius: 10,
     startAngle: 0,
     endAngle: -Math.PI,
-    color: 'yellow',
+    color: 'skyblue',
     canvas,
     ctx,
   } as DrawArc)
@@ -151,7 +151,7 @@ const createT = () => {
     radius: 10,
     startAngle: Math.PI / 2,
     endAngle: Math.PI * 3 / 2,
-    color: 'yellow',
+    color: 'skyblue',
     canvas,
     ctx,
   } as DrawArc)
@@ -161,7 +161,7 @@ const createT = () => {
     radius: 10,
     startAngle: Math.PI / 2,
     endAngle: Math.PI * 3 / 2,
-    color: 'yellow',
+    color: 'skyblue',
     reverse: true,
     canvas,
     ctx,
@@ -174,7 +174,7 @@ const createI = () => {
       [350, 200],
       [350, 120],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -183,7 +183,7 @@ const createI = () => {
       [370, 200],
       [370, 120],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -193,7 +193,7 @@ const createI = () => {
     radius: 10,
     startAngle: 0,
     endAngle: -Math.PI,
-    color: 'yellow',
+    color: 'skyblue',
     canvas,
     ctx,
   } as DrawArc)
@@ -203,7 +203,7 @@ const createI = () => {
     radius: 10,
     startAngle: 0,
     endAngle: -Math.PI,
-    color: 'yellow',
+    color: 'skyblue',
     reverse: true,
     canvas,
     ctx,
@@ -214,7 +214,7 @@ const createI = () => {
     radius: 10,
     startAngle: 0,
     endAngle: 2 * Math.PI,
-    color: 'yellow',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -225,7 +225,7 @@ const createL = () => {
       [440, 190],
       [440, 90],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -234,7 +234,7 @@ const createL = () => {
       [460, 175],
       [460, 90],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -244,7 +244,7 @@ const createL = () => {
     radius: 20,
     startAngle: Math.PI / 2,
     endAngle: Math.PI,
-    color: 'yellow',
+    color: 'skyblue',
     canvas,
     ctx,
   } as DrawArc)
@@ -255,7 +255,7 @@ const createL = () => {
     radius: 10,
     startAngle: Math.PI / 2,
     endAngle: Math.PI,
-    color: 'yellow',
+    color: 'skyblue',
     canvas,
     ctx,
   } as DrawArc)
@@ -265,7 +265,7 @@ const createL = () => {
       [460, 210],
       [550, 210],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -274,7 +274,7 @@ const createL = () => {
       [470, 185],
       [550, 185],
     ],
-    color: 'red',
+    color: 'skyblue',
     canvas,
     ctx,
   })
@@ -284,7 +284,7 @@ const createL = () => {
     radius: 12.5,
     startAngle: Math.PI / 2,
     endAngle: Math.PI * 3 / 2,
-    color: 'yellow',
+    color: 'skyblue',
     reverse: true,
     canvas,
     ctx,
@@ -295,17 +295,86 @@ const createL = () => {
     radius: 10,
     startAngle: 0,
     endAngle: Math.PI,
-    color: 'yellow',
+    color: 'skyblue',
     reverse: true,
     canvas,
     ctx,
   } as DrawArc)
 }
 
+const createS = () => {
+  drawCurve({
+    canvas,
+    ctx,
+    start: [650, 80],
+    end: [640, 145],
+    controlPoints: [
+      [610, 100],
+      [610, 110],
+    ],
+    color: 'skyblue',
+  })
+
+  drawCurve({
+    canvas,
+    ctx,
+    start: [640, 145],
+    end: [610, 200],
+    controlPoints: [
+      [670, 180],
+      [670, 190],
+    ],
+    color: 'skyblue',
+  })
+  drawCurve({
+    canvas,
+    ctx,
+    start: [680, 90],
+    end: [670, 155],
+    controlPoints: [
+      [640, 110],
+      [640, 120],
+    ],
+    color: 'skyblue',
+  })
+
+  drawCurve({
+    canvas,
+    ctx,
+    start: [670, 155],
+    end: [640, 210],
+    controlPoints: [
+      [700, 190],
+      [700, 200],
+    ],
+    color: 'skyblue',
+  })
+
+  drawQuadCurve({
+    canvas,
+    ctx,
+    start: [610, 200],
+    end: [640, 210],
+    controlPoints: [
+      610, 215,
+    ],
+  })
+  drawQuadCurve({
+    canvas,
+    ctx,
+    start: [650, 80],
+    end: [680, 90],
+    controlPoints: [
+      680, 75,
+    ],
+  })
+}
+
 createU()
 createT()
 createI()
 createL()
+createS()
 
 onMounted(() => {
   const container = document.getElementById('canvas-container')!
