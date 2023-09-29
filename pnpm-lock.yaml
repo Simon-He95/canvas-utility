@@ -1,7 +1,7 @@
 lockfileVersion: '6.0'
 
 settings:
-  autoInstallPeers: true
+  autoInstallPeers: false
   excludeLinksFromLockfile: false
 
 importers:
@@ -111,7 +111,7 @@ importers:
         version: 0.12.1(@vueuse/core@9.7.0)
       unplugin-vue-components:
         specifier: ^0.18.0
-        version: 0.18.5(esbuild@0.15.12)(vite@4.0.1)(vue@3.2.36)
+        version: 0.18.5(vite@4.0.1)(vue@3.2.36)
       vite:
         specifier: ^4.0.0
         version: 4.0.1(@types/node@18.11.16)
@@ -5582,7 +5582,7 @@ packages:
       - rollup
     dev: true
 
-  /unplugin-vue-components@0.18.5(esbuild@0.15.12)(vite@4.0.1)(vue@3.2.36):
+  /unplugin-vue-components@0.18.5(vite@4.0.1)(vue@3.2.36):
     resolution: {integrity: sha512-VPA6z/4pcKRDYtWu1H+FIpV0MADlFKG3q7YMVFzNFC3EhMVZ4WuBJ76490oKyauguNw1T1obLCuxNU9JzJ0oAQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -5604,7 +5604,7 @@ packages:
       magic-string: 0.26.7
       minimatch: 5.1.2
       resolve: 1.22.1
-      unplugin: 0.4.0(esbuild@0.15.12)(vite@4.0.1)
+      unplugin: 0.4.0(vite@4.0.1)
       vue: 3.2.36
     transitivePeerDependencies:
       - esbuild
@@ -5614,7 +5614,7 @@ packages:
       - webpack
     dev: true
 
-  /unplugin@0.4.0(esbuild@0.15.12)(vite@4.0.1):
+  /unplugin@0.4.0(vite@4.0.1):
     resolution: {integrity: sha512-4ScITEmzlz1iZW3tkz+3L1V5k/xMQ6kjgm4lEXKxH0ozd8/OUWfiSA7RMRyrawsvq/t50JIzPpp1UyuSL/AXkA==}
     peerDependencies:
       esbuild: '>=0.13'
@@ -5632,7 +5632,6 @@ packages:
         optional: true
     dependencies:
       chokidar: 3.5.3
-      esbuild: 0.15.12
       vite: 4.0.1(@types/node@18.11.16)
       webpack-virtual-modules: 0.4.6
     dev: true
