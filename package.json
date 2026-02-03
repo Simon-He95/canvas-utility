@@ -68,7 +68,7 @@
     "@types/node": "^18.0.0",
     "@vitejs/plugin-vue": "^3.1.2",
     "bumpp": "^8.2.1",
-    "eslint": "^8.26.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-n": "^15.3.0",
     "lint-staged": "^13.1.0",
     "naive-ui": "^2.34.4",
