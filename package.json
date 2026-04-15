@@ -78,7 +78,7 @@
     "tsup": "^6.5.0",
     "tsx": "^3.12.1",
     "typescript": "^4.8.4",
-    "vite": "^4.0.0",
+    "vite": "^6.0.0",
     "vitest": "^0.13.1"
   },
   "simple-git-hooks": {
